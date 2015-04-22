@@ -1,0 +1,43 @@
+<%inherit file="base.htm" />
+
+<%block name="notification">
+    <p class="notification-message">This is an important message we need you to see right away!</p>
+</%block>
+
+
+<%block name="content">
+    <div class="content">
+
+        <h2>Bootstrap Form</h2>
+
+        ${form}
+
+        <br />
+        <br />
+
+        <h2>Current Notes:</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th width="15%">Name</th>
+                <th width="15%">Date</th>
+                <th width="15%">email</th>
+                <th width="55%">Content</th>
+            </tr>
+            %for note in notes:
+                <tr>
+                    <td>${note.name}</td>
+                    <td>${note.dateTime}</td>
+                    <td>${note.email}</td>
+                    <td>${note.content}</td>
+                </tr>
+            %endfor
+        </table>
+
+
+        <br />
+        <br />
+        <br />
+
+    </div>
+
+</%block>

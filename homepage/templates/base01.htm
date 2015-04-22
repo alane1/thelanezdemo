@@ -1,0 +1,118 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+
+## set up a StaticRenderer object to enable the CSS/JS automatic inclusion magic.
+<%! from django_mako_plus.controller import static_files %>
+<%! import datetime %>
+<%  static_renderer = static_files.StaticRenderer(self) %>
+
+
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <head>
+
+    <title><%block name="title">Lanez</%block></title>
+
+    ## add any site-wide scripts or CSS here; for example, jquery:
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="${ STATIC_URL }lib/jquery.datetimepicker.css"/ >
+    <script src="${ STATIC_URL }lib/jquery.js"></script>
+
+
+    ## render the css with the same name as this page
+    ${ static_renderer.get_template_css(request, context)  }
+    <%block name="includeJs"></%block>
+    <%block name="css"></%block>
+
+  </head>
+  <body>
+
+    <header>
+      <div class="header-div">
+        <div class="header-logo-div">
+          <img class="header-logo" src="${ STATIC_URL }homepage/media/lanezlogo.png" />
+        </div>
+
+        <div class="header-title-div">The Lanez</div>
+
+        <div class="top-right-div">
+          <%block name="account">
+            <ul class="dropdown">
+              <li>About</li>
+              <li>Contact Us</li>
+              <li>Account
+                <ul>
+                  <li>Login</li>
+                  <li>Sign Up</li>
+                  <li>Help</li>
+                </ul>
+              </li>
+            </ul>
+          </%block>
+        </div>
+
+        <div class="top-left-menu">
+          <%block name="topleftmenu">
+          </%block>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="notification-div">
+      <%block name="notification"></%block>
+    </div>
+
+    <div class="columns-div">
+
+      <%block name="leftcolumn">
+        <div class="left-column">
+          <div class="left-navigation-div">
+            <ul class="left-navigation">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </%block>
+
+
+      <%block name="rightcolumn">
+        <div class="right-column">
+          <ul class="left-navigation">
+            <li><a href="#">Other</a></li>
+            <li><a href="#">Cool</a></li>
+            <li><a href="#">Stuff</a></li>
+          </ul>
+        </div>
+      </%block>
+
+      <div class="middle-column">
+
+        <%block name="contentmenu">
+        </%block>
+
+
+        <%block name="content">
+          Site content goes here in sub-templates.
+        </%block>
+      </div>
+
+    </div>
+
+
+    <div class="footer">
+      <%block name="footer">
+        copyright 2013 | ${ datetime.datetime.now().strftime("%b-%Y") } | Lanez LLC
+      </%block>
+    </div>
+
+
+    ## render the JS with the same name as this page
+    ${ static_renderer.get_template_js(request, context)  }
+    <%block name="js"></%block>
+
+  </body>
+</html>

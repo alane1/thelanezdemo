@@ -1,0 +1,9 @@
+.main-feature {
+  width: 100%;
+  padding: 20px;
+  //margin: 10px 100px 10px 100px;
+}
+
+.notification-message {
+  background-color: #ff0033;
+}

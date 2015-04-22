@@ -1,0 +1,174 @@
+.header-div {
+  background-color: #6A85CC;
+  min-height: 70px;
+}
+
+.header-logo-div {
+  display: inline-block;
+  position:absolute;
+  float:left;
+}
+
+.header-logo {
+  display:inline-block;
+  vertical-align: text-bottom;
+}
+
+.header-title-div {
+  //background-color: #D2DEFF;
+  position:absolute;
+  font-size:3em;
+  text-align:center;
+  width:100%;
+}
+
+.notification-div {
+  position:absolute;
+  top:0px;
+  right:0px;
+}
+
+.top-right-div {
+  display: inline-block;
+  position:absolute;
+  right:0px;
+}
+
+.top-left-menu {
+  position:absolute;
+  top:50px;
+}
+
+.columns-div {
+  vertical-align:top;
+}
+
+.left-column {
+  float:left;
+  padding: 10px;
+  width:250px;
+  background-color: #85A6FF;
+}
+
+.left-navigation-div {
+  background-color: #85A6FF;
+  width:200px;
+}
+
+ul.left-navigation li {
+  padding:10px;
+  list-style: none;
+}
+
+ul.left-navigation li a {
+  color: black;
+}
+
+
+.middle-column {
+  padding: 10px;
+  background-color: #D2DEFF;
+  width: auto;
+  overflow: hidden;
+}
+
+.right-column {
+  float:right;
+  padding: 10px;
+  width:250px;
+  background-color: #85A6FF;
+
+}
+
+.footer {
+  clear:both;
+  background-color: #676F7F;
+  text-align: center;
+  color: white;
+}
+
+
+
+ul.dropdown {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+ul.dropdown li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 20px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+ul.dropdown li:hover {
+  background: #555;
+  color: #fff;
+}
+
+ul.dropdown li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -transition: opacity 0.2s;
+}
+
+ul.dropdown li ul li {
+  background: #555;
+  display: block;
+  color: #fff;
+}
+
+ul.dropdown li ul li:hover { background: #666; }
+
+ul.dropdown li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-fixed {
+  position: fixed;
+  top: 10px;
+}
+
+.black_link {
+  color: black;
+}
+
+@media only screen and (min-width:481px) and (max-width:1000px) {
+  .right-column {
+    display:none;
+  }
+}
+@media only screen and (max-width:480px) {
+  .header-title-div {
+    display:none;
+  }
+  .top-right-div {
+    top:50px;
+  }
+  .left-column {
+    width:100%;
+  }
+  .scroll-fixed {
+    position: relative;
+    top: auto;
+  }
+  .right-column {
+    display:none;
+  }
+}

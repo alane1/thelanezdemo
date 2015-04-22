@@ -1,0 +1,45 @@
+<%inherit file="base.htm" />
+
+<%block name="content">
+    <div class="content">
+
+      <% id = request.generator() %>
+      <h1 id="${id}">This h1 has the id of: "${id}"</h1>
+
+      <% id = request.generator() %>
+      <h1 id="${id}">This h1 has the id of: "${id}"</h1>
+
+      <% id = request.generator() %>
+      <h1 id="${id}">This h1 has the id of: "${id}"</h1>
+
+      <p>The above id's are generated 1) the letter "a" 2) a psuedo-random 5 digit number
+        3) a incrementor that starts at 1 for each request 4) A sequence in the database</p>
+
+      <h2>Filler Content from here on</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum hendrerit
+        vulputate mi eget finibus. Curabitur cursus est vel purus fringilla, quis
+        rutrum est egestas. Aliquam pharetra, enim vel sollicitudin ultricies, odio
+        risus ultrices lorem, at aliquet risus urna non tellus. Curabitur tincidunt
+        purus lacus, et maximus elit gravida at. Donec odio metus, fringilla at feugiat
+        sed, aliquam eget neque. Mauris ac ante facilisis, ultricies mauris ut,
+        volutpat magna. Vestibulum ut lorem nec odio congue pellentesque ut quis mauris.</p>
+
+      <p>Donec dignissim suscipit erat. Quisque iaculis in urna et tempus. Sed iaculis congue
+        cursus. Aenean non mauris sem. Maecenas enim mi, semper at purus semper, pretium
+        dignissim dui. Duis convallis id purus a sagittis. Ut mattis elit vitae dolor vehicula
+        tincidunt. Vestibulum gravida ac arcu sit amet dignissim. Suspendisse potenti. Maecenas
+        lobortis rutrum lorem a hendrerit. Mauris augue metus, vulputate rhon</p>
+
+      <img class="main-feature" src="${ STATIC_URL }homepage/media/sacramento-california.jpg" />
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum hendrerit
+        vulputate mi egliqac ante facilisis, ultricies mauris ut,
+        volutpat magna. Vestibulum ut lorem nec odio congue pellentesque ut quis mauris.</p>
+
+      <p>Donec dignissim suscipit erat. Quisque iaculis in urna et tempus. Sed iaculis congue
+        cursus. Aenean non marcu sit amet dignissim. Suspendisse potenti. Maecenas
+        lobortis rutrum lorem a hendrerit. Mauris augue metus, vulputate rhon</p>
+
+    </div>
+
+</%block>

@@ -1,0 +1,49 @@
+<%inherit file="base.htm" />
+
+<%block name="includeJs">
+  <script src='${ STATIC_URL }lib/jquery-ui-1.11.3/jquery-ui.min.js'></script>
+  <script src='${ STATIC_URL }lib/aimagegallery.js'></script>
+</%block>
+
+<%block name="notification">
+    <p class="notification-message">This is an important message we need you to see right away!</p>
+</%block>
+
+
+<%block name="content">
+    <div class="content">
+
+      <h2>This is Where the Gallery Goes</h2>
+
+      <div class="gallery_table_container">
+        <table class="gallery_table">
+          <tr>
+
+          %for inx, galleryImage in enumerate(galleryImages):
+            <td>
+              <a href="${ STATIC_URL }homepage/media/gallery/${galleryImage.filename}.jpg" type='image/jpeg' download="${galleryImage.filename}">
+                <div class="img_container">
+
+                    <img class="gallery_img" src="${ STATIC_URL }homepage/media/gallery/${galleryImage.filename}.jpg" />
+                    <span class="gallery_label">${galleryImage.title}</span>
+                </div>
+              </a>
+            </td>
+            %if (inx+1) % 5 == 0:
+              </tr><tr>
+            %endif
+          %endfor
+
+          </tr>
+        </table>
+      </div>
+
+      <p>Donec dignissim suscipit erat. Quisque iaculis in urna et tempus. Sed iaculis congue
+        cursus. Aenean non mauris sem. Maecenas enim mi, semper at purus semper, pretium
+        dignissim dui. Duis convallis id purus a sagittis. Ut mattis elit vitae dolor vehicula
+        tincidunt. Vestibulum gravida ac arcu sit amet dignissim. Suspendisse potenti. Maecenas
+        lobortis rutrum lorem a hendrerit. Mauris augue metus, vulputate rhon</p>
+
+    </div>
+
+</%block>

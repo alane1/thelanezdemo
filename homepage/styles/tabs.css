@@ -1,0 +1,37 @@
+/* tabs css by Adam Lane */
+
+body {
+  background-color: #D2DEFF;
+}
+
+ul.tab-bar {
+  display: block;
+  border-bottom: 2px solid black;
+}
+
+ul.tab-bar > a {
+  cursor: pointer;
+  cursor: hand;
+  color:black;
+}
+
+ul.tab-bar > a > li {
+  background-color: #85A6FF;
+  display: inline-block;
+
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+  padding: 5px 15px 5px 15px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 0px solid black;
+}
+
+ul.tab-bar > a.tab-active > li {
+  background-color: #D2DEFF;
+  position: relative;
+  top: 2px;
+  box-shadow: 2px -2px 2px #314B86;
+}

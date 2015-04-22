@@ -1,0 +1,27 @@
+<%inherit file="base.htm" />
+
+<%block name="content">
+    <div class="content">
+
+      <h2>Test Table Page</h2>
+
+      <div id='table_container' data-page="${pageNum}">
+        -
+      </div>
+
+      <div id="button_container">
+        <nav>
+          <ul class="pager">
+            <li class="previous"><a id="previous_page_btn" href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
+            <li class="next"><a id="next_page_btn" href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <p>Donec dignissim suscipit erat. Quisque iaculis in urna et tempus. Sed iaculis congue
+        cursus. Aenean non marcu sit amet dignissim. Suspendisse potenti. Maecenas
+        lobortis rutrum lorem a hendrerit. Mauris augue metus, vulputate rhon</p>
+
+    </div>
+
+</%block>
